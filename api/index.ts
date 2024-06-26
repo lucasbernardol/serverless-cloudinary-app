@@ -8,6 +8,9 @@ import { env } from 'hono/adapter'; // Environment variables
 import { createMiddleware } from 'hono/factory';
 
 import { bearerAuth } from 'hono/bearer-auth';
+import { HTTPException } from 'hono/http-exception';
+
+import { getReasonPhrase, StatusCodes } from 'http-status-codes';
 
 import { handle } from '@hono/node-server/vercel';
 
@@ -37,6 +40,32 @@ app.use(logger());
 
 app.get('/', auth, async (ctx) => {
 	return ctx.json({ ok: true });
+});
+
+app.onError((error, ctx) => {
+	if (error instanceof HTTPException) {
+		return ctx.json(
+			{
+				error: {
+					name: 'HttpException',
+					message: error.message || getReasonPhrase(error.status),
+					status: error.status,
+				},
+			},
+			error.status,
+		);
+	}
+
+	return ctx.json(
+		{
+			error: {
+				name: 'HttpException',
+				message: 'Internal Server Error',
+				status: StatusCodes.INTERNAL_SERVER_ERROR,
+			},
+		},
+		StatusCodes.INTERNAL_SERVER_ERROR,
+	);
 });
 
 export default handle(app);

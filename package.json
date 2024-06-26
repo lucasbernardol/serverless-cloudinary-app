@@ -17,6 +17,7 @@
 	"dependencies": {
 		"@hono/node-server": "^1.11.4",
 		"cloudinary": "^2.2.0",
-		"hono": "^4.4.8"
+		"hono": "^4.4.8",
+		"http-status-codes": "^2.3.0"
 	}
 }
