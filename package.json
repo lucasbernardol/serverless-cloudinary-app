@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "lucasbernardol",
   "license": "MIT",
-  "description": "Serverless & Cloudinary functions"
+  "description": "Serverless & Cloudinary functions",
+  "devDependencies": {
+    "prettier": "^3.3.2"
+  }
 }
