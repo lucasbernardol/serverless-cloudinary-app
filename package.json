@@ -10,6 +10,12 @@
   "license": "MIT",
   "description": "Serverless & Cloudinary functions",
   "devDependencies": {
-    "prettier": "^3.3.2"
+    "@types/node": "^20.14.9",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.11.4",
+    "hono": "^4.4.8"
   }
 }
