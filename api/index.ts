@@ -11,6 +11,8 @@ import { bearerAuth } from 'hono/bearer-auth';
 
 import { handle } from '@hono/node-server/vercel';
 
+import { v2 as cloudinary } from 'cloudinary';
+
 type Environment = {
 	CLOUDINARY_BUCKET: string;
 	CLOUDINARY_FOLDER: string;
