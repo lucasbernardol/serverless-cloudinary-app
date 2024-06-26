@@ -1,0 +1,5 @@
+@token = 143ef83089b0baee70ab5fa0147811038af12266a3b897314c944576b1758730d70ba7b3c01d6c011cd5fe81ea4293119e3b47ecd1980cdf1171abd90c48cebb
+
+### /
+GET http://localhost:3000/ HTTP/1.1
+Authorization: Bearer {{token}}

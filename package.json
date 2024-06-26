@@ -1,21 +1,21 @@
 {
-  "name": "serverless-cloudinary-functions",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "lucasbernardol",
-  "license": "MIT",
-  "description": "Serverless & Cloudinary functions",
-  "devDependencies": {
-    "@types/node": "^20.14.9",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.2"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.11.4",
-    "hono": "^4.4.8"
-  }
+	"name": "serverless-cloudinary-functions",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"gen:token": "node ./bearerToken.mjs"
+	},
+	"keywords": [],
+	"author": "lucasbernardol",
+	"license": "MIT",
+	"description": "Serverless & Cloudinary functions",
+	"devDependencies": {
+		"@types/node": "^20.14.9",
+		"prettier": "^3.3.2",
+		"typescript": "^5.5.2"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.11.4",
+		"hono": "^4.4.8"
+	}
 }
