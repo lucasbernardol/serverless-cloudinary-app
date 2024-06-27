@@ -1,5 +1,30 @@
 @token = 143ef83089b0baee70ab5fa0147811038af12266a3b897314c944576b1758730d70ba7b3c01d6c011cd5fe81ea4293119e3b47ecd1980cdf1171abd90c48cebb
 
 ### /
-GET http://localhost:3000/ HTTP/1.1
+POST http://localhost:3000/cloudinary HTTP/1.1
 Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+	"filename": "foto de perfil.jpg",
+	"format": "jpg"
+}
+
+### /
+DELETE http://localhost:3000/cloudinary/?publicId=assets/foto-de-perfil-1819775d-0811-4ff9-8c3f-10006fb6fb25 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+
+
+### UPLOAD
+POST https://api.cloudinary.com/v1_1/dghv4pavj/image/upload/?folder=assets&api_key=874551568644763&public_id=foto-de-perfil-1819775d-0811-4ff9-8c3f-10006fb6fb25&signature=44ce9a673eacbcb51bdfbbcc93545b3453f71e97&allowed_formats=png%2Cjpg%2Cjpeg&timestamp=1719520462 HTTP/1.1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="image.png"
+
+< ./image.png
+--WebAppBoundary--
+
+
